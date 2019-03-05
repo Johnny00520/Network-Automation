@@ -1,0 +1,363 @@
+netman@netman:~/Documents/netman/lab1$ nmap 172.20.74.* -p 80,8080,8088,443 -sV -vv 
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2019-01-25 18:25 MST
+NSE: Loaded 4 scripts for scanning.
+Initiating Ping Scan at 18:25
+Scanning 256 hosts [2 ports/host]
+Completed Ping Scan at 18:25, 2.92s elapsed (256 total hosts)
+Initiating Parallel DNS resolution of 256 hosts. at 18:25
+Completed Parallel DNS resolution of 256 hosts. at 18:25, 5.50s elapsed
+Nmap scan report for 172.20.74.0 [host down]
+Nmap scan report for 172.20.74.1 [host down]
+Nmap scan report for 172.20.74.3 [host down]
+Nmap scan report for 172.20.74.4 [host down]
+Nmap scan report for 172.20.74.5 [host down]
+Nmap scan report for 172.20.74.6 [host down]
+Nmap scan report for 172.20.74.7 [host down]
+Nmap scan report for 172.20.74.8 [host down]
+Nmap scan report for 172.20.74.9 [host down]
+Nmap scan report for 172.20.74.10 [host down]
+Nmap scan report for 172.20.74.11 [host down]
+Nmap scan report for 172.20.74.12 [host down]
+Nmap scan report for 172.20.74.13 [host down]
+Nmap scan report for 172.20.74.14 [host down]
+Nmap scan report for 172.20.74.15 [host down]
+Nmap scan report for 172.20.74.16 [host down]
+Nmap scan report for 172.20.74.17 [host down]
+Nmap scan report for 172.20.74.18 [host down]
+Nmap scan report for 172.20.74.19 [host down]
+Nmap scan report for 172.20.74.20 [host down]
+Nmap scan report for 172.20.74.21 [host down]
+Nmap scan report for 172.20.74.22 [host down]
+Nmap scan report for 172.20.74.23 [host down]
+Nmap scan report for 172.20.74.24 [host down]
+Nmap scan report for 172.20.74.25 [host down]
+Nmap scan report for 172.20.74.26 [host down]
+Nmap scan report for 172.20.74.27 [host down]
+Nmap scan report for 172.20.74.28 [host down]
+Nmap scan report for 172.20.74.29 [host down]
+Nmap scan report for 172.20.74.30 [host down]
+Nmap scan report for 172.20.74.31 [host down]
+Nmap scan report for 172.20.74.32 [host down]
+Nmap scan report for 172.20.74.33 [host down]
+Nmap scan report for 172.20.74.34 [host down]
+Nmap scan report for 172.20.74.35 [host down]
+Nmap scan report for 172.20.74.36 [host down]
+Nmap scan report for 172.20.74.37 [host down]
+Nmap scan report for 172.20.74.38 [host down]
+Nmap scan report for 172.20.74.39 [host down]
+Nmap scan report for 172.20.74.40 [host down]
+Nmap scan report for 172.20.74.41 [host down]
+Nmap scan report for 172.20.74.42 [host down]
+Nmap scan report for 172.20.74.43 [host down]
+Nmap scan report for 172.20.74.44 [host down]
+Nmap scan report for 172.20.74.45 [host down]
+Nmap scan report for 172.20.74.46 [host down]
+Nmap scan report for 172.20.74.47 [host down]
+Nmap scan report for 172.20.74.48 [host down]
+Nmap scan report for 172.20.74.49 [host down]
+Nmap scan report for 172.20.74.50 [host down]
+Nmap scan report for 172.20.74.51 [host down]
+Nmap scan report for 172.20.74.52 [host down]
+Nmap scan report for 172.20.74.53 [host down]
+Nmap scan report for 172.20.74.54 [host down]
+Nmap scan report for 172.20.74.55 [host down]
+Nmap scan report for 172.20.74.56 [host down]
+Nmap scan report for 172.20.74.57 [host down]
+Nmap scan report for 172.20.74.58 [host down]
+Nmap scan report for 172.20.74.59 [host down]
+Nmap scan report for 172.20.74.60 [host down]
+Nmap scan report for 172.20.74.61 [host down]
+Nmap scan report for 172.20.74.62 [host down]
+Nmap scan report for 172.20.74.63 [host down]
+Nmap scan report for 172.20.74.64 [host down]
+Nmap scan report for 172.20.74.65 [host down]
+Nmap scan report for 172.20.74.66 [host down]
+Nmap scan report for 172.20.74.67 [host down]
+Nmap scan report for 172.20.74.68 [host down]
+Nmap scan report for 172.20.74.69 [host down]
+Nmap scan report for 172.20.74.70 [host down]
+Nmap scan report for 172.20.74.71 [host down]
+Nmap scan report for 172.20.74.72 [host down]
+Nmap scan report for 172.20.74.73 [host down]
+Nmap scan report for 172.20.74.74 [host down]
+Nmap scan report for 172.20.74.75 [host down]
+Nmap scan report for 172.20.74.76 [host down]
+Nmap scan report for 172.20.74.77 [host down]
+Nmap scan report for 172.20.74.78 [host down]
+Nmap scan report for 172.20.74.79 [host down]
+Nmap scan report for 172.20.74.80 [host down]
+Nmap scan report for 172.20.74.81 [host down]
+Nmap scan report for 172.20.74.82 [host down]
+Nmap scan report for 172.20.74.83 [host down]
+Nmap scan report for 172.20.74.84 [host down]
+Nmap scan report for 172.20.74.85 [host down]
+Nmap scan report for 172.20.74.86 [host down]
+Nmap scan report for 172.20.74.87 [host down]
+Nmap scan report for 172.20.74.88 [host down]
+Nmap scan report for 172.20.74.89 [host down]
+Nmap scan report for 172.20.74.90 [host down]
+Nmap scan report for 172.20.74.91 [host down]
+Nmap scan report for 172.20.74.92 [host down]
+Nmap scan report for 172.20.74.93 [host down]
+Nmap scan report for 172.20.74.94 [host down]
+Nmap scan report for 172.20.74.95 [host down]
+Nmap scan report for 172.20.74.96 [host down]
+Nmap scan report for 172.20.74.97 [host down]
+Nmap scan report for 172.20.74.98 [host down]
+Nmap scan report for 172.20.74.99 [host down]
+Nmap scan report for 172.20.74.100 [host down]
+Nmap scan report for 172.20.74.101 [host down]
+Nmap scan report for 172.20.74.102 [host down]
+Nmap scan report for 172.20.74.103 [host down]
+Nmap scan report for 172.20.74.104 [host down]
+Nmap scan report for 172.20.74.105 [host down]
+Nmap scan report for 172.20.74.106 [host down]
+Nmap scan report for 172.20.74.107 [host down]
+Nmap scan report for 172.20.74.108 [host down]
+Nmap scan report for 172.20.74.109 [host down]
+Nmap scan report for 172.20.74.110 [host down]
+Nmap scan report for 172.20.74.111 [host down]
+Nmap scan report for 172.20.74.112 [host down]
+Nmap scan report for 172.20.74.113 [host down]
+Nmap scan report for 172.20.74.114 [host down]
+Nmap scan report for 172.20.74.115 [host down]
+Nmap scan report for 172.20.74.116 [host down]
+Nmap scan report for 172.20.74.117 [host down]
+Nmap scan report for 172.20.74.118 [host down]
+Nmap scan report for 172.20.74.119 [host down]
+Nmap scan report for 172.20.74.120 [host down]
+Nmap scan report for 172.20.74.121 [host down]
+Nmap scan report for 172.20.74.122 [host down]
+Nmap scan report for 172.20.74.123 [host down]
+Nmap scan report for 172.20.74.124 [host down]
+Nmap scan report for 172.20.74.125 [host down]
+Nmap scan report for 172.20.74.126 [host down]
+Nmap scan report for 172.20.74.127 [host down]
+Nmap scan report for 172.20.74.128 [host down]
+Nmap scan report for 172.20.74.129 [host down]
+Nmap scan report for 172.20.74.130 [host down]
+Nmap scan report for 172.20.74.131 [host down]
+Nmap scan report for 172.20.74.132 [host down]
+Nmap scan report for 172.20.74.133 [host down]
+Nmap scan report for 172.20.74.134 [host down]
+Nmap scan report for 172.20.74.135 [host down]
+Nmap scan report for 172.20.74.136 [host down]
+Nmap scan report for 172.20.74.137 [host down]
+Nmap scan report for 172.20.74.138 [host down]
+Nmap scan report for 172.20.74.139 [host down]
+Nmap scan report for 172.20.74.140 [host down]
+Nmap scan report for 172.20.74.141 [host down]
+Nmap scan report for 172.20.74.142 [host down]
+Nmap scan report for 172.20.74.143 [host down]
+Nmap scan report for 172.20.74.144 [host down]
+Nmap scan report for 172.20.74.145 [host down]
+Nmap scan report for 172.20.74.146 [host down]
+Nmap scan report for 172.20.74.147 [host down]
+Nmap scan report for 172.20.74.148 [host down]
+Nmap scan report for 172.20.74.149 [host down]
+Nmap scan report for 172.20.74.150 [host down]
+Nmap scan report for 172.20.74.151 [host down]
+Nmap scan report for 172.20.74.152 [host down]
+Nmap scan report for 172.20.74.153 [host down]
+Nmap scan report for 172.20.74.154 [host down]
+Nmap scan report for 172.20.74.155 [host down]
+Nmap scan report for 172.20.74.156 [host down]
+Nmap scan report for 172.20.74.157 [host down]
+Nmap scan report for 172.20.74.158 [host down]
+Nmap scan report for 172.20.74.159 [host down]
+Nmap scan report for 172.20.74.160 [host down]
+Nmap scan report for 172.20.74.161 [host down]
+Nmap scan report for 172.20.74.162 [host down]
+Nmap scan report for 172.20.74.163 [host down]
+Nmap scan report for 172.20.74.164 [host down]
+Nmap scan report for 172.20.74.165 [host down]
+Nmap scan report for 172.20.74.166 [host down]
+Nmap scan report for 172.20.74.167 [host down]
+Nmap scan report for 172.20.74.168 [host down]
+Nmap scan report for 172.20.74.169 [host down]
+Nmap scan report for 172.20.74.170 [host down]
+Nmap scan report for 172.20.74.171 [host down]
+Nmap scan report for 172.20.74.172 [host down]
+Nmap scan report for 172.20.74.173 [host down]
+Nmap scan report for 172.20.74.174 [host down]
+Nmap scan report for 172.20.74.175 [host down]
+Nmap scan report for 172.20.74.176 [host down]
+Nmap scan report for 172.20.74.177 [host down]
+Nmap scan report for 172.20.74.178 [host down]
+Nmap scan report for 172.20.74.179 [host down]
+Nmap scan report for 172.20.74.180 [host down]
+Nmap scan report for 172.20.74.181 [host down]
+Nmap scan report for 172.20.74.182 [host down]
+Nmap scan report for 172.20.74.183 [host down]
+Nmap scan report for 172.20.74.184 [host down]
+Nmap scan report for 172.20.74.185 [host down]
+Nmap scan report for 172.20.74.186 [host down]
+Nmap scan report for 172.20.74.187 [host down]
+Nmap scan report for 172.20.74.188 [host down]
+Nmap scan report for 172.20.74.189 [host down]
+Nmap scan report for 172.20.74.190 [host down]
+Nmap scan report for 172.20.74.191 [host down]
+Nmap scan report for 172.20.74.192 [host down]
+Nmap scan report for 172.20.74.193 [host down]
+Nmap scan report for 172.20.74.194 [host down]
+Nmap scan report for 172.20.74.195 [host down]
+Nmap scan report for 172.20.74.196 [host down]
+Nmap scan report for 172.20.74.197 [host down]
+Nmap scan report for 172.20.74.198 [host down]
+Nmap scan report for 172.20.74.199 [host down]
+Nmap scan report for 172.20.74.200 [host down]
+Nmap scan report for 172.20.74.201 [host down]
+Nmap scan report for 172.20.74.203 [host down]
+Nmap scan report for 172.20.74.204 [host down]
+Nmap scan report for 172.20.74.207 [host down]
+Nmap scan report for 172.20.74.208 [host down]
+Nmap scan report for 172.20.74.209 [host down]
+Nmap scan report for 172.20.74.210 [host down]
+Nmap scan report for 172.20.74.211 [host down]
+Nmap scan report for 172.20.74.212 [host down]
+Nmap scan report for 172.20.74.213 [host down]
+Nmap scan report for 172.20.74.214 [host down]
+Nmap scan report for 172.20.74.215 [host down]
+Nmap scan report for 172.20.74.216 [host down]
+Nmap scan report for 172.20.74.217 [host down]
+Nmap scan report for 172.20.74.218 [host down]
+Nmap scan report for 172.20.74.219 [host down]
+Nmap scan report for 172.20.74.220 [host down]
+Nmap scan report for 172.20.74.221 [host down]
+Nmap scan report for 172.20.74.222 [host down]
+Nmap scan report for 172.20.74.224 [host down]
+Nmap scan report for 172.20.74.225 [host down]
+Nmap scan report for 172.20.74.226 [host down]
+Nmap scan report for 172.20.74.227 [host down]
+Nmap scan report for 172.20.74.228 [host down]
+Nmap scan report for 172.20.74.229 [host down]
+Nmap scan report for 172.20.74.230 [host down]
+Nmap scan report for 172.20.74.231 [host down]
+Nmap scan report for 172.20.74.232 [host down]
+Nmap scan report for 172.20.74.233 [host down]
+Nmap scan report for 172.20.74.234 [host down]
+Nmap scan report for 172.20.74.235 [host down]
+Nmap scan report for 172.20.74.236 [host down]
+Nmap scan report for 172.20.74.237 [host down]
+Nmap scan report for 172.20.74.238 [host down]
+Nmap scan report for 172.20.74.239 [host down]
+Nmap scan report for 172.20.74.240 [host down]
+Nmap scan report for 172.20.74.241 [host down]
+Nmap scan report for 172.20.74.242 [host down]
+Nmap scan report for 172.20.74.243 [host down]
+Nmap scan report for 172.20.74.244 [host down]
+Nmap scan report for 172.20.74.245 [host down]
+Nmap scan report for 172.20.74.246 [host down]
+Nmap scan report for 172.20.74.247 [host down]
+Nmap scan report for 172.20.74.248 [host down]
+Nmap scan report for 172.20.74.249 [host down]
+Nmap scan report for 172.20.74.250 [host down]
+Nmap scan report for 172.20.74.251 [host down]
+Nmap scan report for 172.20.74.252 [host down]
+Nmap scan report for 172.20.74.253 [host down]
+Nmap scan report for 172.20.74.254 [host down]
+Nmap scan report for 172.20.74.255 [host down]
+Initiating Connect Scan at 18:25:
+Scanning 5 hosts [4 ports/host]
+Discovered open port 80/tcp on 172.20.74.206
+Discovered open port 80/tcp on 172.20.74.223
+Discovered open port 80/tcp on 172.20.74.205
+Discovered open port 8080/tcp on 172.20.74.206
+Completed Connect Scan at 18:25, 0.01s elapsed (20 total ports)
+Initiating Service scan at 18:25
+Scanning 4 services on 5 hosts
+Completed Service scan at 18:27, 88.84s elapsed (4 services on 5 hosts)
+NSE: Script scanning 5 hosts.
+NSE: Starting runlevel 1 (of 1) scan.
+Initiating NSE at 18:27
+Completed NSE at 18:27, 0.02s elapsed
+NSE: Script Scanning completed.
+Nmap scan report for 172.20.74.2
+Host is up (0.0046s latency).
+Scanned at 2019-01-25 18:25:37 MST for 8s
+PORT     STATE  SERVICE    VERSION
+80/tcp   closed http
+443/tcp  closed https
+8080/tcp closed http-proxy
+8088/tcp closed unknown
+
+Nmap scan report for itd-74-202.int.colorado.edu (172.20.74.202)
+Host is up (0.0042s latency).
+Scanned at 2019-01-25 18:25:37 MST for 8s
+PORT     STATE  SERVICE    VERSION
+80/tcp   closed http
+443/tcp  closed https
+8080/tcp closed http-proxy
+8088/tcp closed unknown
+
+Nmap scan report for itd-74-205.int.colorado.edu (172.20.74.205)
+Host is up (0.0043s latency).
+Scanned at 2019-01-25 18:25:37 MST for 97s
+PORT     STATE  SERVICE    VERSION
+80/tcp   open   http       Apache httpd 2.4.18 ((Ubuntu))
+443/tcp  closed https
+8080/tcp closed http-proxy
+8088/tcp closed unknown
+
+Nmap scan report for itd-74-206.int.colorado.edu (172.20.74.206)
+Host is up (0.0041s latency).
+Scanned at 2019-01-25 18:25:37 MST for 97s
+PORT     STATE  SERVICE     VERSION
+80/tcp   open   http        Apache httpd 2.4.18 ((Ubuntu))
+443/tcp  closed https
+8080/tcp open   http-proxy?
+8088/tcp closed unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at http://www.insecure.org/cgi-bin/servicefp-submit.cgi :
+SF-Port8080-TCP:V=5.21%I=7%D=1/25%Time=5C4BB71F%P=i686-pc-linux-gnu%r(GetR
+SF:equest,2D9,"HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Type:\x20applic
+SF:ation/json\r\nDate:\x20Sat,\x2026\x20Jan\x202019\x2001:25:51\x20GMT\r\n
+SF:Accept-Ranges:\x20bytes\r\nServer:\x20Restlet-Framework/2\.3\.2\r\nAcce
+SF:ss-Control-Allow-Credentials:\x20true\r\nAccess-Control-Allow-Origin:\x
+SF:20\*\r\nAccess-Control-Allow-Methods:\x20DELETE,\x20POST,\x20GET,\x20PU
+SF:T\r\nAccess-Control-Expose-Headers:\x20Authorization,\x20Link\r\nConnec
+SF:tion:\x20close\r\n\r\n{\"code\":404,\"description\":\"The\x20server\x20
+SF:has\x20not\x20found\x20anything\x20matching\x20the\x20request\x20URI\",
+SF:\"reasonPhrase\":\"Not\x20Found\",\"throwable\":null,\"uri\":\"http://w
+SF:ww\.w3\.org/Protocols/rfc2616/rfc2616-sec10\.html#sec10\.4\.5\",\"globa
+SF:lError\":false,\"redirection\":false,\"recoverableError\":false,\"succe
+SF:ss\":false,\"informational\":false,\"serverError\":false,\"connectorErr
+SF:or\":false,\"clientError\":true,\"error\":true}")%r(HTTPOptions,134,"HT
+SF:TP/1\.1\x20200\x20OK\r\nContent-Length:\x200\r\nDate:\x20Sat,\x2026\x20
+SF:Jan\x202019\x2001:25:51\x20GMT\r\nAccept-Ranges:\x20bytes\r\nServer:\x2
+SF:0Restlet-Framework/2\.3\.2\r\nAccess-Control-Allow-Credentials:\x20true
+SF:\r\nAccess-Control-Allow-Origin:\x20\*\r\nAccess-Control-Allow-Methods:
+SF:\x20DELETE,\x20POST,\x20GET,\x20PUT\r\nAccess-Control-Expose-Headers:\x
+SF:20Authorization,\x20Link\r\n\r\n")%r(RTSPRequest,134,"HTTP/1\.1\x20200\
+SF:x20OK\r\nContent-Length:\x200\r\nDate:\x20Sat,\x2026\x20Jan\x202019\x20
+SF:01:25:51\x20GMT\r\nAccept-Ranges:\x20bytes\r\nServer:\x20Restlet-Framew
+SF:ork/2\.3\.2\r\nAccess-Control-Allow-Credentials:\x20true\r\nAccess-Cont
+SF:rol-Allow-Origin:\x20\*\r\nAccess-Control-Allow-Methods:\x20DELETE,\x20
+SF:POST,\x20GET,\x20PUT\r\nAccess-Control-Expose-Headers:\x20Authorization
+SF:,\x20Link\r\n\r\n")%r(FourOhFourRequest,2D9,"HTTP/1\.1\x20404\x20Not\x2
+SF:0Found\r\nContent-Type:\x20application/json\r\nDate:\x20Sat,\x2026\x20J
+SF:an\x202019\x2001:25:51\x20GMT\r\nAccept-Ranges:\x20bytes\r\nServer:\x20
+SF:Restlet-Framework/2\.3\.2\r\nAccess-Control-Allow-Credentials:\x20true\
+SF:r\nAccess-Control-Allow-Origin:\x20\*\r\nAccess-Control-Allow-Methods:\
+SF:x20DELETE,\x20POST,\x20GET,\x20PUT\r\nAccess-Control-Expose-Headers:\x2
+SF:0Authorization,\x20Link\r\nConnection:\x20close\r\n\r\n{\"code\":404,\"
+SF:description\":\"The\x20server\x20has\x20not\x20found\x20anything\x20mat
+SF:ching\x20the\x20request\x20URI\",\"reasonPhrase\":\"Not\x20Found\",\"th
+SF:rowable\":null,\"uri\":\"http://www\.w3\.org/Protocols/rfc2616/rfc2616-
+SF:sec10\.html#sec10\.4\.5\",\"globalError\":false,\"redirection\":false,\
+SF:"recoverableError\":false,\"success\":false,\"informational\":false,\"s
+SF:erverError\":false,\"connectorError\":false,\"clientError\":true,\"erro
+SF:r\":true}");
+
+Nmap scan report for itd-74-223.int.colorado.edu (172.20.74.223)
+Host is up (0.0046s latency).
+Scanned at 2019-01-25 18:25:37 MST for 97s
+PORT     STATE  SERVICE    VERSION
+80/tcp   open   http       Apache httpd 2.4.7 ((Ubuntu))
+443/tcp  closed https
+8080/tcp closed http-proxy
+8088/tcp closed unknown
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 256 IP addresses (5 hosts up) scanned in 97.37 seconds

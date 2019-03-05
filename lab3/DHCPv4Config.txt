@@ -1,0 +1,50 @@
+#!/bin/env python
+import sys
+try:
+    from netmiko import ConnectHandler
+except ImportError:
+    print('netmiko module missing')
+    sys.exit(1)
+
+class Router:
+    config_commands = ['int f1/0', 'ip addr dhcp']
+
+    def __init__(self, device_type, ip, username, password):
+        self.device_type = device_type
+        self.ip = ip
+        self.username = username
+        self.password = password
+
+        self.r2 = {
+            'device_type': self.device_type,
+            'ip': self.ip,
+            'username': self.username,
+            'password': self.password }
+
+        self.output = self.connect(self.r2)
+
+    def connect(self, router):
+        next_connect = ConnectHandler(**router)
+        output = next_connect.send_config_set(self.config_commands)
+
+        return output
+
+    def display_output(self):
+        print self.output
+
+def main():
+    R2 = Router('cisco_ios', '198.51.100.22', 'johnny', 'netman')
+    print R2.display_output()
+
+    R3 = Router('cisco_ios', '198.51.100.23', 'johnny', 'netman')
+    print R3.display_output()
+
+    R4 = Router('cisco_ios', '198.51.100.24', 'johnny', 'netman')
+    print R4.display_output()
+
+
+if __name__ == '__main__':
+    main()
+
+
+

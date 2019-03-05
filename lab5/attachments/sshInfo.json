@@ -1,0 +1,14 @@
+[
+    {
+        "password": "netman123",
+        "username": "lab",
+        "device_type": "cisco_ios",
+        "ip": "198.51.100.1"
+    },
+    {
+        "password": "netman123",
+        "username": "lab",
+        "device_type": "cisco_ios",
+        "ip": "198.51.100.3"
+    }
+]

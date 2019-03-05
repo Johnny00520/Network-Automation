@@ -1,0 +1,11 @@
+
+// Command to login to AWS
+// I might need use terminal to navigate to TLEN5410-NetManagement/2019/lab2 
+ssh -i "aws_ec2_netman.pem" ec2-user@ec2-54-241-188-3.us-west-1.compute.amazonaws.com
+
+
+AWSAccessKeyId=AKIAIMM764RDF3LQQOJA
+AWSSecretKey=a5u+dzCdu/UZx+e1jVL3kgTXK2U3FArixC+hZU+v
+
+
+s3cmd sync /home/netman/fakeRouterConfig s3://netman123
