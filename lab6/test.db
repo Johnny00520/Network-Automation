@@ -1,0 +1,8 @@
+CREATE TABLE ospf (
+    name text primary key,
+    username text not null,
+    password text not null,
+    pid int not null,
+    area_id int not null,
+    loopbackIP text not null
+)

@@ -1,0 +1,258 @@
+---
+ - import_playbook: LiverpoolManager.yaml
+ - import_playbook: RealMadridManager.yaml
+
+ - hosts: all
+   gather_facts: no
+   
+   vars:
+     packages:
+       - python-pip
+       - expect
+       - vsftpd
+       - apache2
+
+   tasks:
+     - name: Install FTP, HTTP, PIP packages
+       become: yes
+       apt: 
+         pkg: "{{ packages }}" 
+         state: present 
+         update_cache: yes
+
+     - name: Add groups
+       become: true
+       become_method: sudo
+       group:
+         name: "{{ item }}"
+         state: present
+       with_items:
+         - Captain
+         - Attack
+         - Defense
+
+ - hosts: Liverpool
+   gather_facts: no
+   tasks:
+     - name: add Attackers
+       user:
+         name: "{{ item }}"
+         comment: "{{ item }}"
+         group: Attack
+         groups: Attack
+         append: yes
+         state: present
+       with_items:
+         - hkewell
+         - mowen
+       become: true
+
+     - name: add Defensers
+       user:
+         name: "{{ item }}"
+         comment: "{{ item }}"
+         group: Defense
+         groups: Defense
+         append: yes
+         state: present
+       with_items:
+         - jvvarragher
+         - dagger
+       become: true
+
+     - name: add Captain, sudo
+       user:
+         name: "{{ item }}"
+         comment: "{{ item }}"
+         groups: Captain,sudo
+         append: yes
+         state: present
+       with_items:
+         - sgerrard
+       become: true
+
+     - name: create a group name directory
+       file: 
+         path: "/home/{{ item.name }}"
+         state: directory
+         group: "{{ item.name }}"
+         mode: "{{ item.mode }}"
+         recurse: yes
+       become: true
+       with_items:
+         - { name: Attack, mode: "0666" }
+         - { name: Defense, mode: "0111" }
+         - { name: Captain, mode: "0777" }
+
+
+     - name: create a directory
+       file: 
+         path: /liverpool_Admin/Route_Info
+         state: directory
+         group: Captain
+         mode: 0774
+         recurse: yes
+       become: true
+
+     - name: create a file under the above directory
+       copy:
+         dest: "/liverpool_Admin/Route_Info/Captain_Details.txt"
+         mode: 0774
+         content: |
+           "{{ item.fullname }}-{{ item.nationality }}-{{ item.username }}"
+       with_items:
+         - { fullname: 'Steven Gerrard', nationality: 'British', username: 'sgerrard' }
+       become: true
+
+     - name: get liverpool route table, top "10" processes
+       shell: "{{ item }}"
+       with_items:
+         - ip route >> /liverpool_Admin/Route_Info/liverpool_Route_Details.txt
+         - ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 11 >> /liverpool_Admin/Route_Info/liverpool_Processes_Details.txt
+       become: true
+
+     - name: Liverpool scp files to FIFA_Admin
+       expect:
+         echo: yes
+         command: "{{ item }}" 
+         responses:
+           'continue connecting': 'yes'
+           'password': 'netman' 
+       with_items:
+         - scp /liverpool_Admin/Route_Info/liverpool_Processes_Details.txt netman@192.168.56.104:/tmp/
+         - scp /liverpool_Admin/Route_Info/liverpool_Route_Details.txt netman@192.168.56.104:/tmp/
+
+     - name: Set authorized key taken from a file
+       become: yes
+       assemble:
+         src: "/home/{{ item }}/.ssh/"
+         regexp: 'pub$'
+         delimiter: '@netman'
+         dest: "/root/.ssh/Liverpool_authorizedKeys.txt"
+       with_items:
+         - mowen
+         - dagger
+         - sgerrard
+
+     - name: send liverpool_authorizedKeys to FIFA_Admin
+       become: yes
+       fetch:
+         src: /root/.ssh/Liverpool_authorizedKeys.txt
+         dest: /root/.ssh/
+         remote_src: yes
+         flat: yes  
+
+ - hosts: RealMadrid
+   gather_facts: no
+   tasks:
+     - name: add Attackers
+       user:
+         name: "{{ item }}"
+         comment: "{{ item }}"
+         group: Attack
+         groups: Attack
+         append: yes
+         state: present
+       with_items:
+         - lfigo
+         - rsoldado
+       become: true
+
+     - name: add Defensers
+       user:
+         name: "{{ item }}"
+         comment: "{{ item }}"
+         group: Defense
+         groups: Defense
+         append: yes
+         state: present
+       with_items:
+         - rcarlos
+         - fcannavaro
+       become: true
+
+     - name: add Captain, sudo
+       user:
+         name: "{{ item }}"
+         comment: "{{ item }}"
+         groups: Captain,sudo
+         append: yes
+         state: present
+       with_items:
+         - zzidane
+       become: true
+
+     - name: create a group name directory
+       file: 
+         path: "/home/{{ item.name }}"
+         state: directory
+         group: "{{ item.name }}"
+         mode: "{{ item.mode }}"
+         recurse: yes
+       become: true
+       with_items:
+         - { name: Attack, mode: "0666" }
+         - { name: Defense, mode: "0111" }
+         - { name: Captain, mode: "0777" }
+
+     - name: create a directory
+       file: 
+         path: /realmadrid_Admin/Route_Info
+         state: directory
+         group: Captain
+         mode: 0574
+         recurse: yes
+       become: true
+
+     - name: create a file under the above directory
+       copy:
+         dest: "/realmadrid_Admin/Route_Info/Captain_Details.txt"
+         mode: 0774
+         content: |
+           "{{ item.fullname }}-{{ item.nationality }}-{{ item.username }}"
+       with_items:
+         - { fullname: 'Zinedine Zidane', nationality: 'French', username: 'zzidane' }
+       become: true
+
+     - name: get Real Madrid route table, top "10" processes
+       shell: "{{ item }}"
+       with_items:
+         - ip route >> /realmadrid_Admin/Route_Info/realmadrid_Route_Details.txt
+         - ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 11 >> /realmadrid_Admin/Route_Info/realmadrid_Processes_Details.txt
+       become: true
+
+     - name: Real Madrid scp files to FIFA_Admin
+       expect:
+         echo: yes
+         command: "{{ item }}" 
+         responses:
+           'continue connecting': 'yes'
+           'password': 'netman' 
+       with_items:
+         - scp /realmadrid_Admin/Route_Info/realmadrid_Processes_Details.txt netman@192.168.56.104:/tmp/
+         - scp /realmadrid_Admin/Route_Info/realmadrid_Route_Details.txt netman@192.168.56.104:/tmp/
+
+     - name: Set authorized key taken from a file
+       become: yes
+       assemble:
+         src: "/home/{{ item }}/.ssh/"
+         regexp: 'pub$'
+         delimiter: '@netman'
+         dest: "/root/.ssh/Realmadrid_authorizedKeys.txt"
+       with_items:
+         - lfigo
+         - fcannavaro
+         - zzidane
+
+     - name: send realmadrid_authorizedKeys to FIFA_Admin
+       become: yes
+       fetch:
+         src: /root/.ssh/Realmadrid_authorizedKeys.txt
+         dest: /root/.ssh/
+         remote_src: yes
+         flat: yes  
+
+
+
+
+

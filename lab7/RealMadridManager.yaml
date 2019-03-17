@@ -1,0 +1,14 @@
+---
+ - hosts: RealMadrid
+   gather_facts: no
+   become: yes
+   tasks:
+     - name: Update sshd configuration safely, avoid locking myself out
+       template:
+         src: "/etc/ssh/sshd_config"
+         dest: "/etc/ssh/sshd_config"
+         ownder: root
+         group: root
+         mode: "0640"
+         validate: "/usr/sbin/sshd -t -f %s"
+         backup: yes

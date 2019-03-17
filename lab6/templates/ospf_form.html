@@ -1,0 +1,207 @@
+<html>
+    <head>
+        <style>
+            body {height: 100%; background-color: powderblue; }
+            .ospf_form_page { height: 100%; }
+            .ospf_page_wrapper { display: flex; }
+            .routerConf { padding: 2%; border: 1px solid;}
+            .ospf_router { color: #236583; }
+            .info { background-color: #f4eb42;}
+            button { margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+
+        <div class="ospf_form_page">
+            <div class="ospf_page_wrapper">
+                <div class="routerConf">
+                    <div class="ospf_router">
+                        <div class="info">
+                        {% if r1area1 %}
+                            You have successful configured {{ r1area1 }} in OSPF <br/></br>
+                        {% endif %}
+                        {% if pingTable %}
+                            <table>
+                                {{ pingTable | safe }}
+                            </table>
+                        {% endif %}
+                        </div>
+                        <form
+                            method="POST"
+                            action="/ospfConfig"
+                        >
+                            <h1>Login Credentials for R1</h1>
+                            <h3>Enter UserName:</h3>
+                            <input type="text" name="username">
+                            <h3>Enter Password:</h3> 
+                            <input type="password" name="password">
+                            
+                            <h1>OSPF Information for R1</h1>    
+                            <h3>R1 IP Address:</h3>
+                            <input type="text" name="IPaddr">
+                            <h3>OSPF Process ID:</h3>
+                            <input type="text" name="pid">
+                            <h3>OSPF Area ID:</h3>
+                            <input type="text" name="areaID">
+                            <h3>Loopback IP:</h3>
+                            <input type="text" name="loopbackIP"><br/>
+                            <button 
+                                type="submit" 
+                                name="r1_info"
+                                value="postVal"
+                            >Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="routerConf">
+                    <div class="ospf_router">
+                        <div class="info">
+                        {% if r2area1 %}
+                            You have successful configured {{r2area1 | safe }} in OSPF
+                        {% endif %}
+                        </div>
+                        <div class="info">
+                        {% if r2area0 %}
+                            You have successful configured {{r2area0 | safe }} in OSPF
+                        {% endif %}
+                        </div>
+
+                        <form
+                            method="POST"
+                            action="/ospfConfig"
+                        >
+                            <h1>Login Credentials for R2</h1>
+                            <h3>Enter UserName:</h3>
+                            <input type="text" name="username">
+                            <h3>Enter Password:</h3> 
+                            <input type="password" name="password">
+                            
+                            <h1>OSPF Information for R2</h1>    
+                            <h3>R2 IP Address:</h3>
+                            <input type="text" name="IPaddr">
+                            <h3>OSPF Process ID:</h3>
+                            <input type="text" name="pid">
+                            <h3>OSPF Area ID:</h3>
+                            <input type="text" name="areaID">
+                            <h3>Loopback IP:</h3>
+                            <input type="text" name="loopbackIP"><br/>
+
+                            <h1>Different Area</h1>
+                            <h3>OSPF Information for R2</h3> 
+                            <h3>R2 IP Address:</h3>
+                            <input type="text" name="IPaddr2">
+                            <h3>OSPF Process ID</h3>
+                            <input type="text" name="pid2">
+                            <h3>OSPF Area ID:</h3>
+                            <input type="text" name="areaID2">
+                            <h3>Loopback IP:</h3>
+                            <input type="text" name="loopbackIP"><br/>
+
+                            <button 
+                                type="submit" 
+                                name="r1_info"
+                                value="postVal"
+                            >Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="routerConf">
+                    <div class="ospf_router">
+                        <div class="info">
+                        {% if r3area0 %}
+                            You have successful configured {{ r3area0 }} in OSPF
+                        {% endif %}
+                        </div>
+                        <form
+                            method="POST"
+                            action="/ospfConfig"
+                        >
+                            <h1>Login Credentials for R3</h1>
+                            <h3>Enter UserName:</h3>
+                            <input type="text" name="username">
+                            <h3>Enter Password:</h3> 
+                            <input type="password" name="password">
+                            
+                            <h1>OSPF Information for R3</h1>    
+                            <h3>R3 IP Address:</h3>
+                            <input type="text" name="IPaddr">
+                            <h3>OSPF Process ID:</h3>
+                            <input type="text" name="pid">
+                            <h3>OSPF Area ID:</h3>
+                            <input type="text" name="areaID">
+                            <h3>Loopback IP:</h3>
+                            <input type="text" name="loopbackIP"><br/>
+                            <button 
+                                type="submit" 
+                                name="r1_info"
+                                value="postVal"
+                            >Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="routerConf">
+                    <div class="ospf_router">
+                        <div class="info">
+                        {% if r4area1 %}
+                            You have successful configured {{r4area1}} in OSPF
+                        {% endif %}
+                        </div>
+                        <div>
+                        {% if r4area0 %}
+                            You have successful configured {{r4area0}} in OSPF
+                        {% endif %}
+                        </div>
+ 
+                        <form
+                            method="POST"
+                            action="/ospfConfig"
+                        >
+                            <h1>Login Credentials for R4</h1>
+                            <h3>Enter UserName:</h3>
+                            <input type="text" name="username">
+                            <h3>Enter Password:</h3> 
+                            <input type="password" name="password">
+                            
+                            <h1>OSPF Information for R4</h1>    
+                            <h3>R4 IP Address:</h3>
+                            <input type="text" name="IPaddr">
+
+                            <h3>OSPF Process ID:</h3>
+                            <input type="text" name="pid">
+                            <h3>OSPF Area ID:</h3>
+                            <input type="text" name="areaID">
+                            <h3>Loopback IP:</h3>
+                            <input type="text" name="loopbackIP"><br/>
+
+                            <h1>Different Area</h1>
+                            <h3>OSPF Information for R4</h3> 
+                            <h3>R4 IP Address:</h3>
+                            <input type="text" name="IPaddr2">
+                            <h3>OSPF Process ID</h3>
+                            <input type="text" name="pid2">
+                            <h3>OSPF Area ID:</h3>
+                            <input type="text" name="areaID2">
+                            <h3>Loopback IP:</h3>
+                            <input type="text" name="loopbackIP"><br/>
+
+
+
+                            <button 
+                                type="submit" 
+                                name="r1_info"
+                                value="postVal"
+                            >Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </body>
+</html>

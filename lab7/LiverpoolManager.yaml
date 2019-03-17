@@ -1,0 +1,52 @@
+---
+ - hosts: Liverpool
+   gather_facts: no
+
+   vars:
+     devices: {}
+     cisco:
+       - CiscoRouter01
+       - CiscoRouter02
+       - CiscoRouter03
+     arista:
+       - AristaSwitch01
+       - AristaSwitch02
+       - AristaSwitch03
+
+   tasks:
+     - name: Group_by_OS
+       group_by:
+         key: ansible-${ansible-machine}
+         #key: "{{ ansible_distribution}}-{{ansible_distribution_version}}"
+
+     - name: Patch the liverpool server
+       become: yes
+       tags: Patch
+       shell: apt-get update warn=no
+       register: patchresult
+
+     - name: Wait for "5" seconds for port "80" to become open on the host after update
+       wait_for:
+         port: 80
+         delay: 5
+
+     - name: Add Cisco devices to the dictionary
+       set_fact:
+         devices: "{{ devices | combine({item: 'Cisco'}) }}"
+       with_items: "{{ cisco }}"
+   
+     - name: Add Arista devices to the dictionary
+       set_fact:
+         devices: "{{ devices | combine({item: 'Arista'}) }}"
+       with_items: "{{ arista }}"
+
+     - name: Debug dictionary
+       debug:
+         var: devices
+         verbosity: 0
+
+
+
+
+
+

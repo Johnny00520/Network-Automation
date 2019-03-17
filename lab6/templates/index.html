@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+
+        <script type="text/javascript">
+            function httpGetAsync(theUrl, callback) {
+                let xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() {
+                    if(xmlHttp.readyState == 4 && xmlHttp.state == 200)
+                        callback(xmlHttp.responseText)
+                }
+                xmlHttp.open("GET", theUrl, true);
+                xmlHttp.send(null)
+            }
+            
+            httpGetAsync('http://127.0.0.1:80/', (response) => {
+                alert(response)
+            })
+        </script>
+    </head>
+    <body
+        style="height: 100%"
+    >
+        <div id="myElement"
+           style="text-align: center; padding-top: 30%" 
+        >
+            <p
+                style="color: white"
+            >In case you feel the buttons are hard to click so I make them bigger</p>
+            <div class="element-wrapper"
+                style="display: inline-block;"
+            >
+                <form 
+                    method="GET" 
+                    action="/get_config"
+                    style="display: inline-block"
+                >
+                    <button type="submit" name="get_config" value="getVal"
+                        style="height: 10%;"
+                    >
+                        Get config
+                    </button>
+                </form>
+                <form 
+                    method="GET" 
+                    action="/ospfConfig"
+                    style="display: inline-block"
+                >
+                    <button type="submit" name="ospf_config" value="ospf"
+                        style="height: 10%"
+                    >
+                        OSPF config
+                    </button>
+                </form>
+                <form
+                    method="GET"
+                    action="/diff_config"
+                    style="display: inline-block"
+                >
+                    <button type="submit" name="diff_req" value="diff"
+                        style="height: 10%;"
+                    >
+                        Diff config
+                    </button>
+                </form>
+
+                <form
+                    method="POST"
+                    action="/migration"
+                    style="display: inline-block"
+                >
+                    <button type="submit" name="migration_req" value="mig"
+                        style="height: 10%;"
+                    >
+                        Migration
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </body>
+</html>
