@@ -1,0 +1,95 @@
+#1 (Hello)
+<?xml version="1.0" encoding="UTF-8"?>
+<hello><capabilities>
+<capability>urn:ietf:params:netconf:base:1.0</capability>
+<capability>urn:ietf:params:netconf:capability:writeable-running:1.0</capability>
+<capability>urn:ietf:params:netconf:capability:startup:1.0</capability>
+<capability>urn:ietf:params:netconf:capability:url:1.0</capability>
+<capability>urn:cisco:params:netconf:capability:pi-data-model:1.0</capability>
+<capability>urn:cisco:params:netconf:capability:notification:1.0</capability>
+</capabilities></hello>]]>]]>
+
+#############################################################################
+#2 (get notification)
+<?xml version="1.0" encoding="UTF-8" ?>
+<rpc message-id="9.0"><notification-on/>
+</rpc>]]>]]>
+
+#############################################################################
+
+#3 (get-config)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc message-id="netconf.mini.edit.3">
+   <get-config>
+      <source>
+         <running/>
+      </source>
+   </get-config>
+</rpc>]]>]]>
+
+#############################################################################
+#4 (get-interface)
+
+<?xml version="1.0" encoding=\"UTF-8\"?>
+<rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+   <get-config>
+      <source>
+         <running/>
+      </source>
+      <filter>
+         <config-format-text-cmd>
+            <text-filter-spec> interface fastEthernet1/0 </text-filter-spec>
+         </config-format-text-cmd>
+      </filter>
+   </get-config>
+</rpc>]]>]]>
+
+#############################################################################
+#5 (set router name: Lab9Router)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> 
+   <edit-config>
+      <target>
+         <running/>
+      </target>
+      <config>
+         <cli-config-data>
+            <cmd>hostname Lab9Router</cmd>
+            <cmd>interface loopback10</cmd>
+            <cmd>ip address 10.1.1.1 255.255.255.255</cmd>
+      </cli-config-data>
+      </config>
+   </edit-config>
+</rpc>]]>]]>
+
+#############################################################################
+#6 (use <get> to see interface loopback 10)
+
+<?xml version="1.0" encoding=\"UTF-8\"?>
+<rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> 
+    <get>
+       <filter>
+          <config-format-text-block>
+            <text-filter-spec> | include Loopback10</text-filter-spec>
+          </config-format-text-block>
+          
+       </filter>
+    </get>
+ </rpc>]]>]]>
+
+#############################################################################
+
+<?xml version="1.0" encoding=\"UTF-8\"?>
+<rpc message-id="netconf.mini.edit.3">
+<copy-config>
+   <target>
+      <startup/>
+   </target>
+   <source>
+      <running/>
+   </source>
+</copy-config>
+</rpc>]]>]]>
+

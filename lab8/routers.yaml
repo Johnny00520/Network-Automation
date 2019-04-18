@@ -1,0 +1,93 @@
+---
+#R1
+R1hostname: R1
+
+R1enable_secret: johnny1
+
+R1loopbacks:
+  - int: Loopback 1
+    IPv4addr: 10.0.0.1 255.255.255.255
+
+R1interfaces:
+  - int: FastEthernet 0/0
+    IPv4addr: 198.51.100.3 255.255.255.0
+  - int: FastEthernet 1/0
+    IPv4addr: 198.51.101.3 255.255.255.0
+  - int: FastEthernet 2/0
+    IPv4addr: 198.51.102.3 255.255.255.0
+
+R1ospf:
+  enable: true
+  processID: 1
+  network:
+  - AdverAddress: 10.0.0.1
+    AdverMask: 0.0.0.0  
+    area: 0
+  - AdverAddress: 198.51.100.3
+    AdverMask: 0.0.0.255
+    area: 0
+  - AdverAddress: 198.51.101.3
+    AdverMask: 0.0.0.255
+    area: 0
+  - AdverAddress: 198.51.102.3
+    AdverMask: 0.0.0.255
+    area: 0
+
+#R2
+R2hostname: R2
+
+R2enable_secret: johnny1
+
+R2loopbacks:
+  - int: Loopback 1
+    IPv4addr: 20.0.0.1 255.255.255.255
+
+R2interfaces:
+  - int: FastEthernet 0/0
+    IPv4addr: 198.51.100.4 255.255.255.0
+  - int: FastEthernet 1/0
+    IPv4addr: 198.51.101.4 255.255.255.0
+
+R2ospf:
+  enable: true
+  processID: 2
+  network:
+  - AdverAddress: 20.0.0.1
+    AdverMask: 0.0.0.0  
+    area: 0
+  - AdverAddress: 198.51.100.4
+    AdverMask: 0.0.0.255
+    area: 0
+  - AdverAddress: 198.51.101.4
+    AdverMask: 0.0.0.255
+    area: 0
+
+#R3
+R3hostname: R3
+
+R3enable_secret: johnny1
+
+R3loopbacks:
+  - int: Loopback 1
+    IPv4addr: 30.0.0.1 255.255.255.255
+
+R3interfaces:
+  - int: FastEthernet 0/0
+    IPv4addr: 198.51.100.5 255.255.255.0
+  - int: FastEthernet 1/0
+    IPv4addr: 198.51.102.5 255.255.255.0
+
+R3ospf:
+  enable: true
+  processID: 3
+  network:
+  - AdverAddress: 30.0.0.1
+    AdverMask: 0.0.0.0  
+    area: 0
+  - AdverAddress: 198.51.100.5
+    AdverMask: 0.0.0.255
+    area: 0
+  - AdverAddress: 198.51.102.5
+    AdverMask: 0.0.0.255
+    area: 0
+

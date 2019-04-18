@@ -1,0 +1,97 @@
+[
+    {
+        "host": "198.51.100.1",
+        "port": "22",
+        "username": "lab",
+        "password": "lab123",
+        "R1": {
+            "identikey": "1-chch6597",
+            "loopback": "Loopback 99",
+            "loopbackIP": "10.1.1.1",
+            "loopbackMask": "255.255.255.0",
+            "ospf": {
+                "processId": "1",
+                "routerId": "10.1.1.1",
+                "advIP": "10.1.1.0",
+                "wildMask": "0.0.0.255",
+                "areaNum": "0"
+            }
+        }
+    },
+    {
+        "host": "198.51.100.12",
+        "port": "22",
+        "username": "lab",
+        "password": "lab123",
+        "R2": {
+            "identikey": "2-chch6597",
+            "loopback": "Loopback 99",
+            "loopbackIP": "10.1.2.1",
+            "loopbackMask": "255.255.255.0",
+            "ospf": {
+                "processId": "1",
+                "routerId": "10.1.2.1",
+                "advIP": "10.1.2.0",
+                "wildMask": "0.0.0.255",
+                "areaNum": "0"
+            }
+        }
+    },
+    {
+        "host": "198.51.100.13",
+        "port": "22",
+        "username": "lab",
+        "password": "lab123",
+        "R3": {
+            "identikey": "3-chch6597",
+            "loopback": "Loopback 99",
+            "loopbackIP": "10.1.3.1",
+            "loopbackMask": "255.255.255.0",
+            "ospf": {
+                "processId": "1",
+                "routerId": "10.1.3.1",
+                "advIP": "10.1.3.0",
+                "wildMask": "0.0.0.255",
+                "areaNum": "0"
+            }
+        }
+    },
+    {
+        "host": "198.51.100.14",
+        "port": "22",
+        "username": "lab",
+        "password": "lab123",
+        "R4": {
+            "identikey": "4-chch6597",
+            "loopback": "Loopback 99",
+            "loopbackIP": "10.1.4.1",
+            "loopbackMask": "255.255.255.0",
+            "ospf": {
+                "processId": "1",
+                "routerId": "10.1.4.1",
+                "advIP": "10.1.4.0",
+                "wildMask": "0.0.0.255",
+                "areaNum": "0"
+            }
+        }
+    },
+    {
+        "host": "198.51.100.15",
+        "port": "22",
+        "username": "lab",
+        "password": "lab123",
+        "R5": {
+            "identikey": "5-chch6597",
+            "loopback": "Loopback 99",
+            "loopbackIP": "10.1.5.1",
+            "loopbackMask": "255.255.255.0",
+            "ospf": {
+                "processId": "1",
+                "routerId": "10.1.5.1",
+                "advIP": "10.1.5.0",
+                "wildMask": "0.0.0.255",
+                "areaNum": "0"
+            }
+        }
+    }
+]

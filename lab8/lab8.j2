@@ -1,0 +1,98 @@
+Building configuration...
+
+Current configuration: 930 bytes
+!
+version 12.4
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+no service password-encryption
+!
+hostname {{ item.hostname }}
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+memory-size iomem 5
+!
+!
+ip cef
+no ip domain lookup
+ip domain name lab.local
+!
+!
+!
+!
+!
+{% for loopback in item.loopbacks %}
+interface {{ loopback.int }}
+  ip address {{ loopback.IPv4addr }}
+{% endfor %}
+!
+{% for network in item.interfaces %}
+interface {{ network.int }}
+  ip address {{ network.IPv4addr }}
+  deplex auto
+  speed auto
+  no shutdown
+{% endfor %}
+!
+
+{% if item.ospf.enable %}
+router ospf {{ item.ospf.processID }}
+    test
+{% endif %}
+!
+#{% if item.ospf.enable == true %}
+#router ospf {{ item.ospf.processID }}
+#  log-adjacency-changes
+#  {% for address in item.ospf.network %}
+#network {{ address.AdverAddress }} {{ address.AdverMask }} area {{ address.area }}
+#  {% endfor %} 
+#{% endif %}
+
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+  exec-timeout 0 0
+  privilege level 15
+  logging synchronous
+  stopbits 1
+line aux 0
+  exec-timeout 0 0
+  privilege level 15
+  logging synchronous
+  stopbits 1
+line vty 0 4
+  login local
+  transport input all
+line vty 5 15
+  login local
+  transport input all
+!
+!
+enable secret {{ item.enable_secret }}
+boot-start-marker
+boot-end-marker
+!
+logging buffered 32000
+no logging console
+!
+!
+end

@@ -1,0 +1,5 @@
+---
+ - name: Generate configuration files
+   template: src=lab8.j2 dest=/etc/ansible/CONFIG/{{ item.hostname }}.txt
+   with_items: "{{ routers }}"
+   become: yes

@@ -1,0 +1,7 @@
+---
+ - name: Generate Router Configuration Files
+   hosts: localhost
+   become: yes
+   roles:
+    # Trying to find router/
+    - router
